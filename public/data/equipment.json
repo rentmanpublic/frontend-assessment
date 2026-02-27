@@ -1,7 +1,7 @@
 [
-  { "id": "e1", "name": "Equipment A", "quantity": 25, "weight": 100 },
-  { "id": "e2", "name": "Equipment B", "quantity": 100, "weight": 350 },
-  { "id": "e3", "name": "Equipment C", "quantity": 45, "weight": 1200 },
-  { "id": "e4", "name": "Equipment D", "quantity": 15, "weight": 5 },
-  { "id": "e5", "name": "Equipment E", "quantity": 50, "weight": 500 }
+  { "id": "e1", "name": "Equipment A", "vehicleId": "v1", "quantity": 25, "weight": 100 },
+  { "id": "e2", "name": "Equipment B", "vehicleId": "v1", "quantity": 100, "weight": 350 },
+  { "id": "e3", "name": "Equipment C", "vehicleId": "v1", "quantity": 45, "weight": 1200 },
+  { "id": "e4", "name": "Equipment D", "vehicleId": "v1", "quantity": 15, "weight": 5 },
+  { "id": "e5", "name": "Equipment E", "vehicleId": "v2", "quantity": 50, "weight": 500 }
 ]

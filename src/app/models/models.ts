@@ -7,6 +7,13 @@ export interface Vehicle {
   image: string;
 }
 
+export interface TransportPlan {
+  id: string;
+  vehicleId: string;
+  driverId: string | null;
+  destination: string;
+}
+
 export interface Driver {
   id: string;
   name: string;
@@ -19,6 +26,7 @@ export interface Driver {
 export interface EquipmentItem {
   id: string;
   name: string;
+  vehicleId: string | null;
   quantity: number;
   weight: number;
 }

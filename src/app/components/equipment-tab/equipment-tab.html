@@ -5,21 +5,49 @@
         <thead>
           <tr>
             <th>Equipment name</th>
+            <th>Vehicle name</th>
             <th>Quantity</th>
+            <th>Weight</th>
           </tr>
         </thead>
         <tbody>
           @for (item of equipment(); track item.id) {
             <tr>
               <td>{{ item.name }}</td>
+              <td class="vehicle-cell">
+                <div class="vehicle-selector" (click)="toggleDropdown(item.id)">
+                  <span>{{ getVehicleName(item.vehicleId) }}</span>
+                  @if (editingEquipmentId() !== item.id && item.vehicleId) {
+                    <span class="material-icon edit-icon">edit</span>
+                  }
+                </div>
+                <app-dropdown
+                  [open]="editingEquipmentId() === item.id"
+                  label="Select vehicle"
+                  (close)="closeDropdown()"
+                >
+                  @for (vehicle of allVehicles(); track vehicle.id) {
+                    <app-dropdown-option
+                      [selected]="item.vehicleId === vehicle.id"
+                      (click)="assignVehicle(item.id, vehicle.id)"
+                    >
+                      <img [src]="vehicle.image" class="dropdown-vehicle-img" alt="" />
+                      <span>{{ vehicle.name }}</span>
+                    </app-dropdown-option>
+                  }
+                </app-dropdown>
+              </td>
               <td>{{ item.quantity }}</td>
+              <td>{{ item.weight | weight }}</td>
             </tr>
           }
         </tbody>
         <tfoot>
           <tr>
             <td class="totals-label">Totals</td>
+            <td></td>
             <td>{{ totalQuantity() }}</td>
+            <td>{{ totalWeight() | weight }}</td>
           </tr>
         </tfoot>
       </app-data-table>
