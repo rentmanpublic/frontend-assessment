@@ -1,0 +1,74 @@
+[
+  {
+    "id": "v1",
+    "name": "Trailer A",
+    "plate": "A-315-BC",
+    "maxWeight": 500,
+    "maxVolume": 30,
+    "image": "assets/trailer-large.svg"
+  },
+  {
+    "id": "v2",
+    "name": "Trailer B",
+    "plate": "B-421-DF",
+    "maxWeight": 800,
+    "maxVolume": 40,
+    "image": "assets/trailer-large.svg"
+  },
+  {
+    "id": "v3",
+    "name": "Trailer C",
+    "plate": "D-866-KB",
+    "maxWeight": 1500,
+    "maxVolume": 50,
+    "image": "assets/trailer-small.svg"
+  },
+  {
+    "id": "v4",
+    "name": "Trailer D",
+    "plate": "E-112-GH",
+    "maxWeight": 600,
+    "maxVolume": 25,
+    "image": "assets/trailer-large.svg"
+  },
+  {
+    "id": "v5",
+    "name": "Trailer E",
+    "plate": "F-789-JK",
+    "maxWeight": 1000,
+    "maxVolume": 35,
+    "image": "assets/trailer-large.svg"
+  },
+  {
+    "id": "v6",
+    "name": "Trailer F",
+    "plate": "G-234-LM",
+    "maxWeight": 700,
+    "maxVolume": 28,
+    "image": "assets/trailer-large.svg"
+  },
+  {
+    "id": "v7",
+    "name": "Trailer G",
+    "plate": "H-567-NP",
+    "maxWeight": 900,
+    "maxVolume": 32,
+    "image": "assets/trailer-large.svg"
+  },
+  {
+    "id": "v8",
+    "name": "Trailer H",
+    "plate": "J-890-QR",
+    "maxWeight": 1100,
+    "maxVolume": 45,
+    "image": "assets/trailer-small.svg"
+  },
+  {
+    "id": "v9",
+    "name": "Trailer I",
+    "plate": "K-123-ST",
+    "maxWeight": 400,
+    "maxVolume": 20,
+    "image": "assets/trailer-large.svg"
+  }
+]

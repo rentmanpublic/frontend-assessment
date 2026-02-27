@@ -1,0 +1,38 @@
+<div class="equipment-container">
+  <app-card [fill]="true">
+    <div class="card-body">
+      <app-data-table>
+        <thead>
+          <tr>
+            <th>Equipment name</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of equipment(); track item.id) {
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.quantity }}</td>
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+          <tr>
+            <td class="totals-label">Totals</td>
+            <td>{{ totalQuantity() }}</td>
+          </tr>
+        </tfoot>
+      </app-data-table>
+      <div class="add-equipment-row">
+        <app-button variant="flat" icon="add" (click)="openAddEquipment()">Add equipment</app-button>
+      </div>
+    </div>
+  </app-card>
+</div>
+
+<ng-template #addEquipmentTemplate>
+  <p class="modal-placeholder-text">This feature is not yet implemented.</p>
+  <div class="modal-actions">
+    <app-button variant="outlined" (click)="closeAddEquipment()">Close</app-button>
+  </div>
+</ng-template>

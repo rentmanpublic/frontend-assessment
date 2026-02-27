@@ -1,0 +1,90 @@
+<div class="app-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    @for (icon of sidebarIcons; track $index) {
+      @if (icon === null) {
+        <div class="sidebar-spacer"></div>
+      } @else {
+        <button class="sidebar-icon" [class.active]="$index === 0">
+          <span class="material-icon">{{ icon }}</span>
+        </button>
+      }
+    }
+  </aside>
+
+  <!-- Main content area -->
+  <div class="main">
+    <!-- Top bar -->
+    <header class="top-bar">
+      <div class="top-bar-logo">
+        <svg viewBox="0 0 40 16" class="rm-logo">
+          <polygon points="1,16 5.5,16 12,0 7.5,0" fill="white" />
+          <polygon points="14,16 18.5,16 25,0 20.5,0" fill="white" />
+          <polygon points="27,16 31.5,16 38,0 33.5,0" fill="white" />
+        </svg>
+      </div>
+      <div class="top-bar-tabs">
+        <div class="main-tab active">
+          <span class="material-icon tab-icon">grid_view</span>
+          <span class="tab-label">Test project 1</span>
+          <span class="material-icon tab-add">add_circle_outline</span>
+        </div>
+        <div class="tab-divider"></div>
+        <div class="main-tab">
+          <span class="material-icon tab-icon">grid_view</span>
+          <span class="tab-label inactive">Project Name</span>
+          <span class="material-icon tab-add">add_circle_outline</span>
+        </div>
+      </div>
+      <div class="top-bar-actions">
+        <span class="material-icon action-icon">close</span>
+        <div class="action-divider"></div>
+        <span class="material-icon action-icon">notifications_none</span>
+        <span class="material-icon action-icon">help_outline</span>
+        <span class="material-icon action-icon">schedule</span>
+        <span class="material-icon action-icon">search</span>
+        <div class="user-profile">
+          <app-avatar initials="JP" />
+          <span class="user-name">Jackson Parker</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Page header -->
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1 class="page-title">Test project 1</h1>
+          <span class="status-dot"></span>
+          <a class="subprojects-link"
+            >Subproject
+            <span class="material-icon dropdown-arrow">arrow_drop_down</span>
+          </a>
+        </div>
+        <div class="page-header-right">
+          <app-button variant="outlined">Close</app-button>
+          <app-button variant="primary">Save</app-button>
+        </div>
+      </div>
+
+      <!-- Tab bar -->
+      <div class="tab-bar">
+        @for (tab of tabs; track tab.id) {
+          <a class="tab" [routerLink]="'/' + tab.id" routerLinkActive="active">
+            {{ tab.label }}
+          </a>
+        }
+      </div>
+
+      <!-- Tab content -->
+      <div class="tab-content">
+        @if (loaded()) {
+          <router-outlet />
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal-outlet />

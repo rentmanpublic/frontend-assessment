@@ -1,0 +1,111 @@
+/*
+ * Design Tokens
+ *
+ * Central source of truth for all visual constants.
+ * Import via styles.css - never hardcode values in component CSS.
+ */
+
+:root {
+  /* ── Brand colors ── */
+  --color-primary: #137cfb;
+  --color-primary-hover: #0f6ade;
+  --color-primary-light: #e8f0fe;
+
+  /* ── Neutral palette ── */
+  --color-raven-600: #3b3e3f;
+  --color-denim-100: #d0d3d7;
+  --color-denim-400: #a2a8ae;
+  --color-denim-600: #44515f;
+
+  /* ── Semantic colors ── */
+  --color-on-surface: #3b3e3f;
+  --color-on-silver: #3c3f40;
+  --color-border: #e3e3e3;
+  --color-white: #ffffff;
+  --color-background: #f3f6fb;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f9f9f9;
+  --color-success: #4caf50;
+  --color-warning: #febf01;
+  --color-error: #e53935;
+
+  /* ── Navigation ── */
+  --color-nav-bg: #2b2b36;
+  --color-nav-sidebar: #3b3e3f;
+
+  /* Legacy aliases (kept for backward compat during migration) */
+  --primary: var(--color-primary);
+  --primary-hover: var(--color-primary-hover);
+  --raven-600: var(--color-raven-600);
+  --denim-400: var(--color-denim-400);
+  --denim-600: var(--color-denim-600);
+  --denim-100: var(--color-denim-100);
+  --border: var(--color-border);
+  --on-surface: var(--color-on-surface);
+  --on-silver: var(--color-on-silver);
+  --main-background: var(--color-background);
+  --navigation-bg: var(--color-nav-bg);
+  --navigation-sidebar: var(--color-nav-sidebar);
+  --white: var(--color-white);
+  --orange: var(--color-warning);
+
+  /* ── Spacing scale (4px base) ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ── Typography ── */
+  --font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  --font-family-mono: 'Source Code Pro', monospace;
+
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+  --font-size-2xl: 28px;
+
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+
+  /* ── Border radius ── */
+  --radius-sm: 2px;
+  --radius-base: 3px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 50%;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-topbar: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* ── Z-index scale ── */
+  --z-dropdown: 200;
+  --z-backdrop: 150;
+  --z-topbar: 100;
+  --z-modal: 300;
+  --z-toast: 400;
+
+  /* ── Transitions ── */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+
+  /* ── Layout ── */
+  --sidebar-width: 60px;
+  --topbar-height: 56px;
+}

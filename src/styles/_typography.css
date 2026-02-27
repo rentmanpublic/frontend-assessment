@@ -1,0 +1,84 @@
+/*
+ * Typography
+ *
+ * Consistent type styles across the app.
+ * Uses tokens from _tokens.css.
+ */
+
+/* ── Headings ── */
+.heading-xl {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-on-surface);
+}
+
+.heading-lg {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-on-surface);
+}
+
+.heading-md {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-on-surface);
+}
+
+.heading-sm {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-on-surface);
+}
+
+/* ── Body text ── */
+.text-base {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-on-surface);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-on-surface);
+}
+
+/* ── Labels ── */
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-on-surface);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Caption ── */
+.caption {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-denim-400);
+}
+
+/* ── Links ── */
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ── Muted text ── */
+.text-muted {
+  color: var(--color-denim-400);
+}
