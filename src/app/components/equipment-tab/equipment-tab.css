@@ -12,6 +12,39 @@
   align-items: flex-end;
 }
 
+/* ── Vehicle cell ── */
+.vehicle-cell {
+  position: relative;
+}
+
+.vehicle-selector {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.vehicle-selector:hover {
+  color: var(--color-primary);
+}
+
+.edit-icon {
+  font-size: var(--font-size-base) !important;
+  color: var(--color-denim-400);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.vehicle-selector:hover .edit-icon {
+  opacity: 1;
+}
+
+.dropdown-vehicle-img {
+  width: 24px;
+  height: 16px;
+  object-fit: contain;
+}
+
 /* ── Footer ── */
 .totals-label {
   font-weight: var(--font-weight-bold);

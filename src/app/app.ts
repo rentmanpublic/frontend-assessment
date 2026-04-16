@@ -17,6 +17,7 @@ export class App implements OnInit {
   readonly tabs = [
     { id: 'equipment', label: 'Equipment' },
     { id: 'crew', label: 'Crew Scheduling' },
+    { id: 'transport', label: 'Transport Planning' },
     { id: 'financial', label: 'Financial' },
   ];
 

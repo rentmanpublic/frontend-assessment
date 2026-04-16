@@ -1,0 +1,14 @@
+[
+  {
+    "id": "tp1",
+    "vehicleId": "v1",
+    "driverId": "d1",
+    "destination": "My venue street 10, Utrecht"
+  },
+  {
+    "id": "tp2",
+    "vehicleId": "v3",
+    "driverId": "d3",
+    "destination": "Jaarbeurs, Utrecht"
+  }
+]
