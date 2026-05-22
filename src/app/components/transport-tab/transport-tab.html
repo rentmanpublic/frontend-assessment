@@ -1,0 +1,83 @@
+<div class="transport-layout">
+  <!-- Left sidebar: vehicle list -->
+  <div class="vehicle-list">
+    <div class="vehicle-list-card">
+      @for (vehicle of vehicles(); track vehicle.id) {
+        <div
+          class="vehicle-list-item"
+          [class.selected]="selectedVehicleId() === vehicle.id"
+          (click)="openPlanModal(vehicle, $event)"
+        >
+          <img [src]="vehicle.image" class="vehicle-thumb" alt="" />
+          <span class="vehicle-name">{{ vehicle.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Right: vehicle cards -->
+  <div class="vehicle-cards-area">
+    <div class="vehicle-cards-card">
+      <div class="vehicle-cards-grid">
+        @for (plan of transportPlans(); track plan.id) {
+          @if (getVehicle(plan.vehicleId); as vehicle) {
+            <div class="vehicle-detail-card">
+              <div class="vehicle-card-header">
+                <span class="vehicle-card-title">{{ vehicle.name }}</span>
+                @if (plan.destination) {
+                  <a
+                    class="material-icon nav-icon"
+                    [href]="getGoogleMapsUrl(plan.destination)"
+                    target="_blank"
+                    rel="noopener"
+                    >arrow_outward</a
+                  >
+                }
+              </div>
+              <div class="vehicle-card-body">
+                <div class="vehicle-info-row">
+                  <div class="vehicle-specs">
+                    <p>Plate: {{ vehicle.plate }}</p>
+                    <p>Max weight: {{ vehicle.maxWeight }}kg</p>
+                    <p>Max volume: {{ vehicle.maxVolume }}m3</p>
+                  </div>
+                  <img [src]="vehicle.image" class="vehicle-card-img" alt="" />
+                </div>
+                @if (getDriver(plan.driverId); as driver) {
+                  <div class="driver-row">
+                    <div
+                      class="driver-avatar"
+                      [style.background]="driver.avatarColor"
+                      [style.color]="driver.initialsColor"
+                    >
+                      {{ driver.initials }}
+                    </div>
+                    <div class="driver-info">
+                      <span class="driver-name">{{ driver.name }}</span>
+                      <span class="driver-license">Drivers license: {{ driver.license }}</span>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        }
+
+        @if (transportPlans().length === 0) {
+          <div class="empty-state">
+            <p>No vehicles have been planned yet.</p>
+            <p>Select a vehicle from the list and click the navigate icon to plan it.</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+@if (showPlanModal() && planningVehicle()) {
+  <app-plan-vehicle-modal
+    [vehicle]="planningVehicle()!"
+    (close)="closePlanModal()"
+    (save)="onSavePlanning($event)"
+  />
+}

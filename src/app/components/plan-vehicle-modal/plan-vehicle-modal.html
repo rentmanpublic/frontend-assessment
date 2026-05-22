@@ -1,0 +1,49 @@
+<div class="modal-backdrop" (click)="onBackdropClick($event)">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">PLAN VEHICLE</span>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Driver</label>
+          <div class="select-wrapper" (click)="toggleDriverDropdown()">
+            <span [class.placeholder]="!selectedDriverId()">
+              {{ selectedDriverName() }}
+            </span>
+            <svg class="select-arrow" viewBox="0 0 24 24" width="18" height="18">
+              <path d="M7 10l5 5 5-5z" fill="currentColor" />
+            </svg>
+          </div>
+          @if (showDriverDropdown()) {
+            <div class="driver-dropdown">
+              @for (driver of drivers(); track driver.id) {
+                <div
+                  class="driver-option"
+                  [class.selected]="selectedDriverId() === driver.id"
+                  (click)="selectDriver(driver.id)"
+                >
+                  {{ driver.name }}
+                </div>
+              }
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label class="form-label">Destination</label>
+          <input
+            type="text"
+            class="form-input"
+            [value]="destination()"
+            (input)="destination.set($any($event.target).value)"
+            placeholder="Enter destination"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outlined" (click)="onClose()">Close</button>
+      <button class="btn btn-primary" (click)="onSave()">Save</button>
+    </div>
+  </div>
+</div>
